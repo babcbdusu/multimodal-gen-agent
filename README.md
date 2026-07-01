@@ -1,8 +1,8 @@
 # Multimodal Generation Agent
 
-An API proxy that bridges a text-only AI model with external image/video generation services. It intercepts generation-related keywords in conversations and routes them to Agnes AI APIs.
+An API proxy that bridges a text-only AI model with external image/video generation services. It intercepts generation-related keywords in conversations and routes them to external APIs.
 
-一个 API 代理层，将纯文本 AI 模型与外部图像/视频生成服务桥接起来。通过拦截对话中的生成相关关键词，将请求路由到 Agnes AI API。
+一个 API 代理层，将纯文本 AI 模型与外部图像/视频生成服务桥接起来。通过拦截对话中的生成相关关键词，将请求路由到外部 API。
 
 ## Features 功能特性
 
@@ -18,7 +18,7 @@ An API proxy that bridges a text-only AI model with external image/video generat
 
 - **Runtime**: Node.js 18+
 - **Framework**: Express.js
-- **API**: Agnes AI (agnes-image-2.0-flash, agnes-video-v2.0)
+- **API**: Pluggable external generation services (e.g., Agnes AI, OpenAI DALL-E, Stability AI)
 - **Storage**: Local filesystem
 
 ## Installation 安装
@@ -26,7 +26,7 @@ An API proxy that bridges a text-only AI model with external image/video generat
 ### Prerequisites 前置要求
 
 - Node.js >= 18
-- Agnes API Key
+- External API Key (e.g., Agnes AI API Key)
 
 ### Steps 步骤
 
@@ -40,7 +40,7 @@ npm install
 
 # Configure API key
 cp .env.example .env
-# Edit .env and add your AGNES_API_KEY
+# Edit .env and add your API_KEY
 ```
 
 ## Configuration 配置
@@ -48,8 +48,8 @@ cp .env.example .env
 Create a `.env` file in the project root:
 
 ```env
-AGNES_API_KEY=your_api_key_here
-AGNES_BASE_URL=https://apihub.agnes-ai.com/v1
+API_KEY=your_api_key_here
+API_BASE_URL=https://api.example.com/v1
 SERVER_PORT=8000
 ```
 
@@ -164,7 +164,7 @@ curl -X POST http://localhost:8000/generate -H "Content-Type: application/json" 
 multimodal-gen-agent/
 ├── src/
 │   ├── app.js          # Express server entry point
-│   ├── client.js       # Agnes API client
+│   ├── client.js       # External API client (pluggable)
 │   └── router.js       # Route handlers & task management
 ├── outputs/            # Generated files (auto-created)
 ├── .env                # API configuration
