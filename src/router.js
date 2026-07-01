@@ -17,7 +17,7 @@ function createTask(id, type, prompt, imageUrl) {
     type: type,
     prompt: prompt,
     status: "pending",
-    result: null,
+    result_meta: null,
     error: null,
     local_file: null,
     url: null,
@@ -68,7 +68,7 @@ async function generateImage(req, res) {
       
       var t = tasks.get(taskId);
       t.status = "completed";
-      t.result = result;
+      t.result_meta = { status: "completed", file_count: 1 };
       t.local_file = filePath;
       t.url = fileUrl;
     } catch (err) {
