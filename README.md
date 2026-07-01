@@ -2,16 +2,17 @@
 
 An API proxy that bridges a text-only AI model with external image/video generation services. It intercepts generation-related keywords in conversations and routes them to Agnes AI APIs.
 
+一个 API 代理层，将纯文本 AI 模型与外部图像/视频生成服务桥接起来。通过拦截对话中的生成相关关键词，将请求路由到 Agnes AI API。
+
 ## Features 功能特性
 
-- **文生图 (Text-to-Image)** — 输入文字描述，生成高质量图片
-- **图生图 (Image-to-Image)** — 基于参考图片，进行风格迁移或修改
-- **图生视频 (Image-to-Video)** — 让静态图片动起来，生成短视频
-- **文生视频 (Text-to-Video)** — 直接通过文字描述生成视频
-- **智能路由** — 自动判断用户意图，选择合适的生成模式
-- **异步任务管理** — 支持任务状态查询，不阻塞主线程
-- **本地存储** — 生成的文件自动保存到本地，通过 HTTP 访问
-- **多端适配** — Discord Bot、Web Frontend、CLI、其他 AI Agent 均可调用
+- **Text-to-Image 文生图** — Input text description, generate image
+- **Image-to-Image 图生图** — Based on reference image, style transfer or modification
+- **Image-to-Video 图生视频** — Make static image into a short video
+- **Smart Routing 智能路由** — Auto-detect intent, select correct generation mode
+- **Async Task Management 异步任务管理** — Task status query, non-blocking
+- **Local Storage 本地存储** — Generated files saved locally, accessible via HTTP
+- **Multi-platform 多端适配** — Discord Bot, Web Frontend, CLI, other AI Agents
 
 ## Tech Stack 技术栈
 
@@ -78,9 +79,9 @@ POST http://localhost:8000/generate
 {
   "prompt": "描述文字",
   "image_url": "参考图片URL (可选)",
-  "type": "text-to-image | image-to-image | text-to-video | image-to-video (可选，自动检测)",
+  "type": "text-to-image | image-to-image | image-to-video (可选，自动检测)",
   "size": "1920x1080 (仅图片)",
-  "duration": 5 (仅视频，单位秒)"
+  "duration": 5 (仅视频，单位秒)
 }
 ```
 
