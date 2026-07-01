@@ -1,0 +1,1 @@
+{"name":"multimodal-gen-agent","version":"1.0.0","description":"Multimodal generation agent with text-to-image, image-to-image, and image-to-video","main":"src/app.js","scripts":{"start":"node src/app.js","dev":"node --watch src/app.js"},"dependencies":{"dotenv":"^17.4.0","express":"^4.22.2","openai":"^6.4.0"}}
