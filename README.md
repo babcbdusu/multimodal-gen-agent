@@ -6,13 +6,12 @@ An API proxy that bridges a text-only AI model with external image/video generat
 
 ## Features 功能特性
 
-- **Text-to-Image 文生图** — Input text description, generate image
-- **Image-to-Image 图生图** — Based on reference image, style transfer or modification
-- **Image-to-Video 图生视频** — Make static image into a short video
-- **Smart Routing 智能路由** — Auto-detect intent, select correct generation mode
-- **Async Task Management 异步任务管理** — Task status query, non-blocking
-- **Local Storage 本地存储** — Generated files saved locally, accessible via HTTP
-- **Multi-platform 多端适配** — Discord Bot, Web Frontend, CLI, other AI Agents
+- **Smart Keyword Detection 智能关键词检测** — Intercepts generation-related keywords in conversations and triggers the correct API call
+- **Auto Type Routing 自动类型路由** — Detects user intent (text-to-image, image-to-image, or image-to-video) from prompt and image_url
+- **Async Task Queue 异步任务队列** — Non-blocking task submission with status polling and result retrieval
+- **Local File Storage 本地文件存储** — Downloads generated images/videos to local disk, serves via HTTP
+- **RESTful API Gateway RESTful API 网关** — Unified endpoint for all generation types, compatible with any platform
+- **Pluggable Adapter 可扩展适配器** — Easy to switch or add external generation service providers
 
 ## Tech Stack 技术栈
 
