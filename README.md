@@ -1,6 +1,6 @@
 # Multimodal Generation Agent
 
-一个基于 Agnes AI 的多模态生成服务，支持文生图、图生图、图生视频。
+An API proxy that bridges a text-only AI model with external image/video generation services. It intercepts generation-related keywords in conversations and routes them to Agnes AI APIs.
 
 ## Features 功能特性
 
